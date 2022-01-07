@@ -1,24 +1,30 @@
 function runProgram(input) {
     var arr = input.split("\n");
-    var [len, num] = arr[0].trim().split(" ").map(Number);
+    var len = +arr[0].trim();
     var data = arr[1].trim().split(" ").map(Number);
-    var max;
-    var sum = 0
-    for (let i = 0; i < num; i++) {
-        sum += data[i]
-    }
-    max = sum
-    for (let i = num; i < data.length; i++) {
-        sum += data[i] - data[i - num]
-        if (sum > max) {
-            max = sum
+    var k = +arr[2].trim();
+    console.log(BineryFind(data, len, k));
+}
+function BineryFind(data, len, k) {
+    let low = 0;
+    let high = len - 1;
+    while (low <= high) {
+        let mid = low + Math.floor((high - low) / 2)
+        if (data[mid] == k) {
+            return mid
+        }
+        else if (data[mid] > k) {
+            high = mid - 1
+        } else {
+            low = mid + 1
         }
     }
-    console.log(max);
+    return -1
 }
 if (process.env.USERNAME === "Vishal") {
-    runProgram(`7 3
-    2 0 2 0 -5 4 2`);
+    runProgram(`5
+    1 2 3 5 6
+    6`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

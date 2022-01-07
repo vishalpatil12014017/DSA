@@ -1,24 +1,18 @@
 function runProgram(input) {
     var arr = input.split("\n");
-    var [len, num] = arr[0].trim().split(" ").map(Number);
-    var data = arr[1].trim().split(" ").map(Number);
-    var max;
-    var sum = 0
-    for (let i = 0; i < num; i++) {
-        sum += data[i]
-    }
-    max = sum
-    for (let i = num; i < data.length; i++) {
-        sum += data[i] - data[i - num]
-        if (sum > max) {
-            max = sum
-        }
-    }
-    console.log(max);
+    var [len, k] = arr[0].trim().split(" ").map(Number);
+    var data = arr[1].trim().split(" ").sort((a,b)=>{
+        return a-b
+    }).map(Number);
+    console.log(CheckHeight(data, len, k));
+}
+function CheckHeight(data, len, k) {
+    return data
+
 }
 if (process.env.USERNAME === "Vishal") {
-    runProgram(`7 3
-    2 0 2 0 -5 4 2`);
+    runProgram(`4 7
+    20 15 10 17`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

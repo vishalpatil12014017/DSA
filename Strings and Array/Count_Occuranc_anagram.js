@@ -1,24 +1,23 @@
 function runProgram(input) {
     var arr = input.split("\n");
-    var [len, num] = arr[0].trim().split(" ").map(Number);
-    var data = arr[1].trim().split(" ").map(Number);
-    var max;
-    var sum = 0
-    for (let i = 0; i < num; i++) {
-        sum += data[i]
-    }
-    max = sum
-    for (let i = num; i < data.length; i++) {
-        sum += data[i] - data[i - num]
-        if (sum > max) {
-            max = sum
+    var str = arr[0].trim().split("").sort()
+    var data = arr[1].trim().split("")
+    var count = 0;
+    for (let i = 0; i <= data.length - str.length; i++) {
+        var ans = ""
+        for (let k = i; k < i + str.length; k++) {
+            ans += data[k]
+            //console.log(ans);
+        }
+        if (ans.split("").sort().join() == str) {
+            count++
         }
     }
-    console.log(max);
+    console.log(count);
 }
 if (process.env.USERNAME === "Vishal") {
-    runProgram(`7 3
-    2 0 2 0 -5 4 2`);
+    runProgram(`foro
+    foroferpqrofor`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

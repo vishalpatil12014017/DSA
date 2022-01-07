@@ -1,24 +1,28 @@
 function runProgram(input) {
     var arr = input.split("\n");
-    var [len, num] = arr[0].trim().split(" ").map(Number);
+    var [len, k] = arr[0].trim().split(" ").map(Number);
     var data = arr[1].trim().split(" ").map(Number);
-    var max;
-    var sum = 0
-    for (let i = 0; i < num; i++) {
-        sum += data[i]
-    }
-    max = sum
-    for (let i = num; i < data.length; i++) {
-        sum += data[i] - data[i - num]
-        if (sum > max) {
-            max = sum
+    console.log(Trplate_sum(data, len, k));
+}
+function Trplate_sum(data, len, k) {
+    let low = 0;
+    let high = len - 1;
+    let result = 0;
+    while (high >= low) {
+        let mid = low + Math.floor((high - low) / 2)
+        if (Math.abs(Math.max(data[mid], data[mid - 1], data[mid + 1])), Math.min(data[mid], data[mid - 1], data[mid + 1]) <= k) {
+            result++
+            high = mid - 1
+        } else {
+            low = mid + 1
         }
     }
-    console.log(max);
+    return result
 }
 if (process.env.USERNAME === "Vishal") {
-    runProgram(`7 3
-    2 0 2 0 -5 4 2`);
+    runProgram(`4 3
+    1 2 3 4
+    `);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

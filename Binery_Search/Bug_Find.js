@@ -1,34 +1,29 @@
 function runProgram(input) {
     var arr = input.split("\n");
-    var [len, num] = arr[0].trim().split(" ").map(Number);
+    var len = +arr[0].trim()
     var data = arr[1].trim().split(" ").map(Number);
-    var min = 0;
-    var len = 0;
-    var res = []
-    for (let i = 0; i < data.length; i++) {
-        var subarr = ""
-        for (let j = i; j < data.length; j++) {
-            subarr+=" "+data[j]
-            console.log(subarr);
+    console.log(Find_Bug(data, len));
+
+}
+function Find_Bug(data, len) {
+    let low = 0;
+    let high = len - 1;
+    let result = -1;
+    while (high >= low) {
+        let mid = low + Math.floor((high - low) / 2)
+        if (data[mid] == 1) {
+            result = mid;
+            high = mid - 1
+        } else {
+            low = mid + 1
         }
-        // var sum = 0
-        // for (let k = 0; k < subarr.length; k++) {
-        //     sum += subarr[k]
-           
-        // }
-
-        // if (sum == num) {
-        //     res.push(subarr.length)
-        // }
-
-
     }
-    res.sort()
-    console.log(res[0]);
+    return result
+
 }
 if (process.env.USERNAME === "Vishal") {
-    runProgram(`5 0
-    2 -2 0 1 3`);
+    runProgram(`5
+    0 0 0 0 0`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

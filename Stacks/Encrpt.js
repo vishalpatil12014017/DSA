@@ -1,24 +1,29 @@
+
 function runProgram(input) {
     var arr = input.split("\n");
-    var [len, num] = arr[0].trim().split(" ").map(Number);
-    var data = arr[1].trim().split(" ").map(Number);
-    var max;
-    var sum = 0
-    for (let i = 0; i < num; i++) {
-        sum += data[i]
+    var t = +arr[0].trim();
+    for (let k = 1; k < t+1; k++) {
+        var data=arr[k].trim()
+        var stack=[]
+       for (let i = 0; i < data.length; i++) {
+          if(data[i]=="#"){
+              stack.pop()
+          }else{
+              stack.push(data[i])
+          }
+           
+       }
+       console.log(stack.join(""));
+        
     }
-    max = sum
-    for (let i = num; i < data.length; i++) {
-        sum += data[i] - data[i - num]
-        if (sum > max) {
-            max = sum
-        }
-    }
-    console.log(max);
+
+   
+
 }
 if (process.env.USERNAME === "Vishal") {
-    runProgram(`7 3
-    2 0 2 0 -5 4 2`);
+    runProgram(`2
+    ab#d
+    a#bc`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
