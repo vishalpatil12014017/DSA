@@ -2,26 +2,27 @@ function runProgram(input) {
     var arr = input.split("\n");
     var str1 = arr[0].trim().split("")
     var str2 = arr[1].trim().split("")
-    var m = str1.length;
-    var n = str2.length
-    var dp = Array(m + 1).fill(-1).map(x => Array(n + 1).fill(-1));
-    for (var i = 0; i <= m; i++) {
-        for (var j = 0; j <= n; j++) {
-            if (i == 0 || j == 0) {
+    var dp = Array(str1.length + 1).fill().map(() => Array(str2.length + 1).fill(0));
+    var result = 0
+    for (i = 0; i <= str1.length; i++) {
+        for (j = 0; j <= str2.length; j++) {
+            if (i == 0 || j == 0)
                 dp[i][j] = 0;
-            }
-            else if (str1[i - 1] == str2[j - 1])
+            else if (str1[i - 1] == str2[j - 1]) {
                 dp[i][j] = dp[i - 1][j - 1] + 1;
-            else {
-                dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                result = Math.max(result, dp[i][j]);
+            }
+             else {
+                dp[i][j] = 0;
             }
         }
     }
-    console.log(dp[m][n]);
+    console.log(result);
+
 }
 if (process.env.USERNAME === "Vishal") {
-    runProgram(`AEDFHR
-    ABCDGH`);
+    runProgram(`eziowiomkvrrdzx
+    orugiebaolddavd`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

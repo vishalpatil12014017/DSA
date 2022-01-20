@@ -7,7 +7,6 @@ function runProgram(input) {
         var ans = ""
         for (let k = i; k < i + str.length; k++) {
             ans += data[k]
-            //console.log(ans);
         }
         if (ans.split("").sort().join() == str) {
             count++

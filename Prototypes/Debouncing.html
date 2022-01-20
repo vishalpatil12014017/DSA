@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" oninput="doSomething()">
+</body>
+<script>
+    let count = 0;
+    const getData = () => {
+        console.log("Getting Data..", count++);
+    }
+
+    const debounce = (getData) => {
+        let timer;
+        return () => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                getData();
+            }, 2000)
+        }
+    }
+    // const debounce = (getData) => {
+    //     let timer;
+    //     return function() {
+    //         clearTimeout(timer);
+    //         timer = setTimeout(() => {
+    //             getData.apply(this,arguments);
+    //         }, 2000)
+    //     }
+    // }
+
+    const doSomething = debounce(getData);
+//     const doSomething = useCallback(
+//     debounce(getData),
+//     []
+//   )
+</script>
+</html>

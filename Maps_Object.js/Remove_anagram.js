@@ -1,25 +1,20 @@
 function runProgram(input) {
     var arr = input.split("\n");
-    var obj = {}
-    for (let i = 1; i < arr.length; i++) {
-        if (obj[arr[i].trim().split("").sort().join("")] == undefined) {
-            obj[arr[i].trim().split("").sort().join("")] = i
-        }
-
+    let obj={}
+    let len=+arr[0].trim()
+    for (let i = 1; i <= len; i++) {
+        let data=arr[i].trim().split("").sort()
+        if (obj[data]==undefined) {
+            obj[data]=arr[i].trim()
+        }   
     }
-    let res = [];
-    for (key in obj) {
-        res.push(arr[obj[key]].trim())
+    let newdata=Object.values(obj).sort()
+    console.log(newdata.length);
+    for (let i = 0; i < newdata.length; i++) {
+        console.log(newdata[i]);     
     }
-    res.sort()
-    console.log(Object.keys(obj).length);
-    for (let i = 0; i < res.length; i++) {
-        console.log(res[i].trim());
-
-    }
-
-
-
+    
+    
 }
 if (process.env.USERNAME === "Vishal") {
     runProgram(`6

@@ -23,8 +23,8 @@ function runProgram(input) {
 //  -1 -1 -1 -1 4 24 24 -1
 if (process.env.USERNAME === "Vishal") {
     runProgram(`1
-    8
-    39 27 11 4 24 32 32 1`);
+    5
+    4 3 6 7 8`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

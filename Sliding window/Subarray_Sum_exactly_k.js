@@ -18,7 +18,7 @@ function runProgram(input) {
             }
             sum = sum + data[i]
         }
-        
+
         if (flag == true) {
             console.log("Yes");
         } else {
