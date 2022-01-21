@@ -19,7 +19,7 @@
         object.city = "sangli"
         let obj={};
         obj.__proto__=object
-        console.log(obj.city) //sangli
+        //console.log(obj.city) //sangli
     }
     {
         function Data(name, age) {
