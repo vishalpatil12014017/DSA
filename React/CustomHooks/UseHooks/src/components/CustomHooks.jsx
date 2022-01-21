@@ -13,7 +13,7 @@ function useDelay(delay) {
 function CustomHooks() {
   const ready = useDelay(5)
   if (!ready) {
-    return  <h1>React CustomHooks</h1>;
+    return <h1>React CustomHooks</h1>;
   }
   return (
     <div>
