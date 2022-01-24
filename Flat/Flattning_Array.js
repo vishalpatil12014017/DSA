@@ -12,19 +12,19 @@ function Flatten(data) {
 }
  console.log(ans);
 
-//  Array.prototype.myMap = function (data) {
-//     var ans = [];
-//     Flatten(data)
-//     function Flatten(data) {
-//         for (let i = 0; i < data.length; i++) {
-//             if (Array.isArray(data[i])) {
-//                 Flatten(data[i])
-//             } else {
-//                 ans.push(data[i])
-//             }
-//         }
-//     }
-//     return ans
-// };
-// const newArr = arr.myMap(arr)
-//  console.log(newArr);
+ Array.prototype.myMap = function (data) {
+    var ans = [];
+    Flatten(data)
+    function Flatten(data) {
+        for (let i = 0; i < data.length; i++) {
+            if (Array.isArray(data[i])) {
+                Flatten(data[i])
+            } else {
+                ans.push(data[i])
+            }
+        }
+    }
+    return ans
+};
+const newArr = arr.myMap(arr)
+ console.log(newArr);

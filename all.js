@@ -1,4 +1,6 @@
 
+
+
 {
     //type of creating objects
 
@@ -17,8 +19,8 @@
         }
         var object = new Data("vishal", 22) //Data { name: 'vishal', age: 22 }
         object.city = "sangli"
-        let obj={};
-        obj.__proto__=object
+        let obj = {};
+        obj.__proto__ = object
         //console.log(obj.city) //sangli
     }
     {
@@ -195,6 +197,8 @@
     //console.log(!!1===true);//true
     // console.log(Math.max()); //-Infinity
     // console.log(Math.min()); //Infinity
+    //console.log(NaN==NaN);//false
+    //console.log(typeof NaN.toString()==="string")//true;
 }
 {
     let obj = [
@@ -251,15 +255,75 @@
 {
     const data = () => arguments.length;
 
-    console.log(data(1, 2, 3, 5, 4, 2));
+    //console.log(data(1, 2, 3, 5, 4, 2));
 }
 {
-    let timer;
-    if (timer) clearTimeout(timer)
-    timer = setTimeout(() => {
-        timer = null;
-        //func.apply(context, args)
-        console.log("v");
-    }, 2000);
-    console.log("vishal");
+
+
+    //This was the given function and I supposed to print "hello" first and "World" after 3 seconds
+
+    async function main() {
+        console.log('hello')
+
+        await delay(3)
+
+        console.log('world')
+    }
+
+    //---------------My Answer------------------
+
+    function delay(i) {
+        let startTime = new Date().getTime();
+        currentTime = startTime
+        while (currentTime < startTime + (i * 1000)) {
+            currentTime = new Date().getTime();
+        }
+    }
+
+    // function delay(i) {
+    //     return new Promise((res, rej)=> {
+    //         setTimeout(()=> {
+    //             res()
+    //         }, i * 1000)
+    //     })
+    // }
+   
+   
+   // main()
+}
+{
+    const map1 = new Map();
+
+map1.set('a', 1);
+map1.set('b', 2);
+map1.set("z",10)
+map1.set('c', 3);
+// console.log(map1) //Map(4) { 'a' => 1, 'b' => 2, 'z' => 10, 'c' => 3 }
+}
+{
+    let counter = 30;
+if (counter === 30) {
+ //"let"; var counter = 31; //Identifier 'counter' has already been declared so we have to put let here
+  //console.log(counter); // 31
+}
+//console.log(counter); // 30 (because the variable in if block won't exist here)
+function data(){
+    console.log(arguments);
+}
+data(21)
+}
+
+{
+    function data(...argu) {
+        // console.log(argu);//[ 'vishal', 21 ]
+        // console.log(arguments);//[Arguments] { '0': 'vishal', '1': 21 }
+       
+    }
+    data("vishal",21)
+}
+{
+    let str="abcd";
+    let new1=str.split("")
+    new1[0]=new1[0].toUpperCase();
+   // console.log(new1.join(""));
 }
