@@ -12,7 +12,6 @@ function runProgram(input) {
     }
   }
   console.log(count) //2
-
 }
 
 if (process.env.USERNAME === "Vishal") {

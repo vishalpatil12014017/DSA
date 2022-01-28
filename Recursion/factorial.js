@@ -8,7 +8,7 @@ function runProgram(input) {
 
 }
 if (process.env.USERNAME === "Vishal") {
-    runProgram(`5`);
+    runProgram(`4`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

@@ -5,6 +5,7 @@ function runProgram(input) {
     var low = 0;
     var high = len - 1;
     var index = Binarysearch(data, low, high)
+    console.log(index);
     var ans1 = BinarysearchFind(data, low, index, num)
     var ans2 = BinarysearchFind(data, index, high, num)
     if (ans1 != -1) {
@@ -52,7 +53,7 @@ function Binarysearch(data, low, high) {
     return result
 }
 if (process.env.USERNAME === "Vishal") {
-    runProgram(`5 8
+    runProgram(`5 2
     3 4 5 1 2`);
 } else {
     process.stdin.resume();

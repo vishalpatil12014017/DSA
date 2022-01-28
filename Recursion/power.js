@@ -1,15 +1,18 @@
 function runProgram(input) {
-    var value = Number(input)
-    function countStairs(n) {
-        if (n == 0 || n == 1) return 1;
-        else if (n == 2) return 2;
-        return countStairs(n - 1) + countStairs(n - 2) + countStairs(n - 3);
+    var [x,y] = input.trim().split(" ").map(Number);
+    function findpower(x,y) {
+        if(y==0)return 1;
+         //if(x==0)return 0;
+       
+        return x*findpower(x,y-1)
     }
-    console.log(countStairs(value))
-
+   
+    console.log(findpower(x,y))
+ 
+   
 }
 if (process.env.USERNAME === "Vishal") {
-    runProgram(`4`);
+    runProgram(`2 1`);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

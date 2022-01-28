@@ -12,7 +12,8 @@ function runProgram(input) {
         count = new_arr.length
         flag = true;
 
-      } console.log(new_arr)
+      } 
+      console.log(new_arr)
 
     }
 

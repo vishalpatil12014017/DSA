@@ -1,7 +1,6 @@
 function runProgram(input) {
     var arr= input.split("\n");
    var t=Number(arr[0].trim());
-  
    for(var k=2;k<t*2+1;k=k+2){ 
        var data=arr[k].trim().split(" ").map(Number);
        var count=0;
@@ -13,10 +12,7 @@ function runProgram(input) {
            }
        }
        console.log(count)
-       
-
    }
-
   }
   if (process.env.USERNAME === "Vishal") {
   runProgram(`2

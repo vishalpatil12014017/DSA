@@ -52,10 +52,11 @@
 //         var obj1 = { firstName: 'Vishal', lastName: 'Patil' };
 
 //         function invite(first_parameter, second_parameter) {
+//             // console.log(this);//{ firstName: 'Vishal', lastName: 'Patil' }
 //             console.log(first_parameter + ' ' + this.firstName + ' ' + this.lastName + ', ' + second_parameter);
 //         }
 
-//         // invite.call(obj1, 'Hi', 'How are you?'); // hi Vishal Patil, How are you?
+//          invite.call(obj1, 'Hi', 'How are you?'); // hi Vishal Patil, How are you?
 //     }
 //     {
 //         //apply
@@ -422,5 +423,21 @@
     //   ]
 }
 {
-
+    let arr = [1, 3, 2, 3, 1, 2, 2, 3, 3, 4, 5]
+    let set = new Set(arr)
+    // console.log([...set]);
+    // let obj={...arr}
+    // console.log(obj);
+}
+{
+   let str=[2,3,3,4,5,1,1,6];
+   let ans=str.filter((x,i)=>{
+       return str.indexOf(x)==i?x:null
+   })
+   console.log(ans);
+}
+{
+    let str='abcdefghi';
+    let str1='bc'
+    console.log(str.indexOf(str1));
 }

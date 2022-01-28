@@ -1,46 +1,44 @@
-function check(subarr){
-  var count=0;
-  for(var i=0;i<subarr.length;i++){
-    var new_arr=subarr[i];
-    var cou=0
-    for(var j=0;j<new_arr.length;j++){
-      if(new_arr[j]%2!=0){
-          cou++
+function check(subarr) {
+  var count = 0;
+  for (var i = 0; i < subarr.length; i++) {
+    var new_arr = subarr[i];
+    var cou = 0
+    for (var j = 0; j < new_arr.length; j++) {
+      if (new_arr[j] % 2 != 0) {
+        cou++
       }
     }
-    if(cou==new_arr.length){
+    if (cou == new_arr.length) {
       count++
     }
   }
   return count;
 }
 function runProgram(input) {
-    var arr= input.split("\n");
-   var t=Number(arr[0].trim());
-  
-   for(var k=2;k<t*2+1;k=k+2){ 
-       var data=arr[k].trim().split(" ").map(Number);
-       var subarr=[];
-       for(var i=0;i<data.length;i++){
-           for(var j=i;j<data.length;j++){
-             var sub=[];
-             for(var l=i;l<=j;l++){
-               sub.push(data[l])
-             }
-             subarr.push(sub)
-           } 
-       }  
-      console.log(check(subarr))
-   }
+  var arr = input.split("\n");
+  var t = Number(arr[0].trim());
 
+  for (var k = 2; k < t * 2 + 1; k = k + 2) {
+    var data = arr[k].trim().split(" ").map(Number);
+    var subarr = [];
+    for (var i = 0; i < data.length; i++) {
+      var sub = [];
+      for (var j = i; j < data.length; j++) {
+        sub.push(data[j])
+        subarr.push([...sub])
+      }
+    }
+    console.log(subarr)
   }
-  if (process.env.USERNAME === "Vishal") {
+
+}
+if (process.env.USERNAME === "Vishal") {
   runProgram(`2
   5
   1 2 3
   5
   2 2 3 4 5`);
-  } else {
+} else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");
   let read = "";
@@ -57,4 +55,4 @@ function runProgram(input) {
     runProgram(read);
     process.exit(0);
   });
-  }
+}
