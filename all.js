@@ -440,3 +440,14 @@
 //     let str1='bc'
 //     console.log(str.indexOf(str1));
 // }
+// {
+//     let str="vishal";
+//     let str1=str.split("");
+//     str1[0]=str1[0].toUpperCase();
+//     console.log(str1.join(''));
+// }
+// {
+//     var today = new Date();
+// var dd = String(today.getSeconds());
+// console.log(dd);
+// }

@@ -27,7 +27,7 @@ var user = {
 var ans = {}
 function Flatten(obj, startWith) {
   for (key in obj) {
-    const UpdatedKey = `${startWith}_${key}`
+    const UpdatedKey = `${startWith}${key}_`
     if (typeof obj[key] === "object") {
       Flatten(obj[key], UpdatedKey)
     } else {
