@@ -8,14 +8,13 @@
 //         var obj = Object.create(null)
 //         // console.log(obj);//[Object: null prototype] {}
 //     }
-
+    
 //     {
 //         class Data {
 //             constructor(name, age) {
 //                 this.name = name;
 //                 this.age = age
 //             }
-
 //         }
 //         var object = new Data("vishal", 22) //Data { name: 'vishal', age: 22 }
 //         object.city = "sangli"
@@ -410,34 +409,34 @@
 //     return res
 // }
 // }
-{
-    let arr = ["1", '2', '15', '-7', "-6", '300', "1000"]
-    //console.log("-7".charCodeAt());
-    let y = arr.sort()
-    // console.log(y);
-    //[
-    //     '-6',  '-7',
-    //     '1',   '1000',
-    //     '15',  '2',
-    //     '300'
-    //   ]
-}
-{
-    let arr = [1, 3, 2, 3, 1, 2, 2, 3, 3, 4, 5]
-    let set = new Set(arr)
-    // console.log([...set]);
-    // let obj={...arr}
-    // console.log(obj);
-}
-{
-   let str=[2,3,3,4,5,1,1,6];
-   let ans=str.filter((x,i)=>{
-       return str.indexOf(x)==i?x:null
-   })
-   console.log(ans);
-}
-{
-    let str='abcdefghi';
-    let str1='bc'
-    console.log(str.indexOf(str1));
-}
+// {
+//     let arr = ["1", '2', '15', '-7', "-6", '300', "1000"]
+//     //console.log("-7".charCodeAt());
+//     let y = arr.sort()
+//     // console.log(y);
+//     //[
+//     //     '-6',  '-7',
+//     //     '1',   '1000',
+//     //     '15',  '2',
+//     //     '300'
+//     //   ]
+// }
+// {
+//     let arr = [1, 3, 2, 3, 1, 2, 2, 3, 3, 4, 5]
+//     let set = new Set(arr)
+//     // console.log([...set]);
+//     // let obj={...arr}
+//     // console.log(obj);
+// }
+// {
+//    let str=[2,3,3,4,5,1,1,6];
+//    let ans=str.filter((x,i)=>{
+//        return str.indexOf(x)==i?x:null
+//    })
+//    console.log(ans);
+// }
+// {
+//     let str='abcdefghi';
+//     let str1='bc'
+//     console.log(str.indexOf(str1));
+// }

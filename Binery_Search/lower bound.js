@@ -26,7 +26,7 @@ function Binarysearch(data, low, high, num) {
     return result
 }
 if (process.env.USERNAME === "Vishal") {
-    runProgram(`5 3
+    runProgram(`5 5
     1 1 2 2 5`);
 } else {
     process.stdin.resume();

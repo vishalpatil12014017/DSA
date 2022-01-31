@@ -6,7 +6,6 @@ function runProgram(input) {
     var high = len - 1;
     ;
     console.log(Binarysearch(data, low, high, num));
-
 }
 function Binarysearch(data, low, high, num) {
     while (high >= low) {
