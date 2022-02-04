@@ -1,0 +1,18 @@
+C:\Users\Vishal>mongo
+> use movies
+switched to db movies
+> db.createCollection("data")
+{ "ok" : 1 }
+> db.data.find({movie_name:"Avengers, The"}).pretty()
+> db.data.find({movie_name: {$ne:"Avengers, The"}}).pretty()
+> db.data.find({budget: {$gte:19000}}).pretty()
+> db.data.find({budget: {$lte:10000}}).pretty()
+> db.data.find({$and:[{budget:{$gt:10000}},{production_year:{$gt:2000}}]}).pretty()
+> db.data.find({$or:[{budget:{$gt:10000}},{production_year:{$gt:2000}}]}).pretty()
+> db.data.find({$nor:[{budget:{$gt:10000}},{production_year:{$gt:2000}}]}).pretty()
+> db.data.find({$or:[{budget:{$ne:10000}},{production_year:{$ne:2000}}]}).pretty()
+> db.data.find({$and:[{production_year:{$gte:2000}},{production_year:{$lte:2010}}]}).pretty()
+> db.data.find().sort({movie_name: 1}).sort({production_year: -1}).pretty()
+> db.data.find().skip(10).limit(2).pretty()
+
+
