@@ -15,4 +15,27 @@ switched to db movies
 > db.data.find().sort({movie_name: 1}).sort({production_year: -1}).pretty()
 > db.data.find().skip(10).limit(2).pretty()
 
+> show collections
+users
+> db.users.insert({first_name:"Loraine",last_name:"Dutson",email:"ldutson0@icq.com",gender: "male",ip_address:"212.222.93.9",age:16})
+WriteResult({ "nInserted" : 1 })
+> db.users.findOne()
+>  db.users.update({" _id" : ObjectId("61434031936d8308d28b5a62")},{ first_name : "Vishal", last_name : "Patil", "email" : "ldutson0@icq.com", gender : "male"})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.users.find({" _id" : ObjectId("61434031936d8308d28b5a62")})
+> db.users.update({ _id : ObjectId("61434031936d8308d28b5a62")},{ first_name : "Vishal", last_name : "Patil", "email" : "ldutson0@icq.com", gender : "male"})
+> db.users.find({ _id : ObjectId("61434031936d8308d28b5a62")})
+>  db.users.updateMany({gender:"male"},{$set:{gender:"Male"}})
+{ "acknowledged" : true, "matchedCount" : 6, "modifiedCount" : 6 }
+> db.users.find({gender:"Male"}).pretty()
+>  db.users.remove({gender:"Male"})
+WriteResult({ "nRemoved" : 6 })
+> db.users.find()
+> db.users.find().pretty()
+> db.users.remove( {_id : ObjectId("61434031936d8308d28b5a5c")})
+WriteResult({ "nRemoved" : 1 })
+> db.users.find().pretty()
+> db.dropDatabase()
+> db
+assignment
 
